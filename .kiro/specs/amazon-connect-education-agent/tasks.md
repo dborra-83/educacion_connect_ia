@@ -132,7 +132,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Probar caso cuando perfil no tiene programa
     - Probar caso cuando nombre tiene caracteres especiales
 
-- [ ] 7. Implementar motor de consultas a base de conocimiento
+- [x] 7. Implementar motor de consultas a base de conocimiento
   - [x] 7.1 Crear función de procesamiento de consultas académicas
     - Implementar detección de tipo de consulta (pensum, requisitos, fechas)
     - Invocar queryKnowledgeBase con parámetros apropiados
@@ -143,7 +143,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 10: Respuesta a consultas de información académica**
     - **Valida: Requisitos 3.2, 3.3, 3.4**
   
-  - [ ] 7.3 Implementar citación de fuentes
+  - [x] 7.3 Implementar citación de fuentes
     - Crear función que extrae y formatea referencias de documentos
     - Incluir fuentes en todas las respuestas basadas en documentos
     - _Requisitos: 3.6_
@@ -156,7 +156,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Probar caso cuando queryKnowledgeBase no retorna resultados
     - Verificar que se ofrezcan alternativas de contacto
 
-- [ ] 8. Checkpoint - Verificar funcionalidad básica
+- [x] 8. Checkpoint - Verificar funcionalidad básica
   - Ejecutar todas las pruebas de perfil y consultas
   - Verificar flujo completo: inicio → saludo → consulta → respuesta
   - Preguntar al usuario si hay dudas o ajustes necesarios
