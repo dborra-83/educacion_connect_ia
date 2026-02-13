@@ -33,8 +33,8 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Definir tipos para ErrorResponse y ErrorMetadata
     - _Requisitos: 8.1, 8.2, 8.3_
 
-- [ ] 3. Implementar capa de herramientas MCP
-  - [ ] 3.1 Implementar getStudentProfile
+- [-] 3. Implementar capa de herramientas MCP
+  - [x] 3.1 Implementar getStudentProfile
     - Crear función que consulta DynamoDB con studentId
     - Implementar lógica de integración de datos CRM y LMS
     - Implementar manejo de errores (StudentNotFound, ServiceUnavailable)
@@ -45,7 +45,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 8: Uso de herramienta correcta para perfil**
     - **Valida: Requisitos 2.5**
   
-  - [ ] 3.3 Implementar queryKnowledgeBase
+  - [-] 3.3 Implementar queryKnowledgeBase
     - Crear función que consulta Amazon Kendra/S3
     - Implementar filtrado por tipo de documento y programa
     - Implementar formateo de resultados con excerpts y fuentes
