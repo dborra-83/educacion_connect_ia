@@ -14,21 +14,21 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
   - Crear archivos de configuración para ESLint y Prettier
   - _Requisitos: Todos (infraestructura base)_
 
-- [ ] 2. Implementar interfaces y tipos de datos
-  - [ ] 2.1 Definir interfaces para herramientas MCP
+- [x] 2. Implementar interfaces y tipos de datos
+  - [x] 2.1 Definir interfaces para herramientas MCP
     - Crear interfaces TypeScript para GetStudentProfileInput/Output
     - Crear interfaces para QueryKnowledgeBaseInput/Output
     - Crear interfaces para CheckAcademicRecordInput/Output
     - Crear interfaces para GenerateCertificateInput/Output
     - _Requisitos: 1.1, 2.5, 3.1, 4.1, 6.4_
   
-  - [ ] 2.2 Definir modelos de datos principales
+  - [x] 2.2 Definir modelos de datos principales
     - Crear interfaces para UnifiedProfile, AcademicHistory, Certificate
     - Crear interfaces para ConversationContext, Message, AgentResponse
     - Crear tipos para estados y enumeraciones (academicStatus, certificateType, etc.)
     - _Requisitos: 1.5, 2.1, 4.1, 6.1_
   
-  - [ ] 2.3 Definir interfaces de error
+  - [x] 2.3 Definir interfaces de error
     - Crear jerarquía de clases de error personalizadas
     - Definir tipos para ErrorResponse y ErrorMetadata
     - _Requisitos: 8.1, 8.2, 8.3_
