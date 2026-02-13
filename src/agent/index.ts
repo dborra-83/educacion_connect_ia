@@ -4,3 +4,4 @@
 
 export * from './conversation-manager';
 export * from './reasoning-engine';
+export * from './procedure-automation';
