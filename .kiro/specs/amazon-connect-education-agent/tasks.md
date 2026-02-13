@@ -33,7 +33,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Definir tipos para ErrorResponse y ErrorMetadata
     - _Requisitos: 8.1, 8.2, 8.3_
 
-- [-] 3. Implementar capa de herramientas MCP
+- [x] 3. Implementar capa de herramientas MCP
   - [x] 3.1 Implementar getStudentProfile
     - Crear función que consulta DynamoDB con studentId
     - Implementar lógica de integración de datos CRM y LMS
@@ -45,7 +45,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 8: Uso de herramienta correcta para perfil**
     - **Valida: Requisitos 2.5**
   
-  - [-] 3.3 Implementar queryKnowledgeBase
+  - [x] 3.3 Implementar queryKnowledgeBase
     - Crear función que consulta Amazon Kendra/S3
     - Implementar filtrado por tipo de documento y programa
     - Implementar formateo de resultados con excerpts y fuentes
@@ -56,7 +56,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 9: Uso de queryKnowledgeBase para consultas académicas**
     - **Valida: Requisitos 3.1**
   
-  - [ ] 3.5 Implementar checkAcademicRecord
+  - [x] 3.5 Implementar checkAcademicRecord
     - Crear función que consulta API académica vía Lambda
     - Implementar parsing de respuesta con cursos, calificaciones y alertas
     - Implementar detección de alertas académicas (materias reprobadas, bajo GPA)
@@ -67,7 +67,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 12: Uso de checkAcademicRecord para contexto académico**
     - **Valida: Requisitos 4.1**
   
-  - [ ] 3.7 Implementar generateCertificate
+  - [x] 3.7 Implementar generateCertificate
     - Crear función que invoca Lambda de generación de certificados
     - Implementar validación de tipo de certificado
     - Implementar lógica de entrega (email o download)
