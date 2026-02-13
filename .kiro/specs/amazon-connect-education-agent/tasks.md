@@ -392,7 +392,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Implementar evaluación de oportunidades proactivas
     - _Requisitos: Todos (orquestación general)_
   
-  - [ ] 16.2 Implementar gestor de estado de conversación
+  - [-] 16.2 Implementar gestor de estado de conversación
     - Crear función que mantiene ConversationContext actualizado
     - Implementar persistencia de contexto entre turnos
     - Implementar limpieza de contexto al finalizar sesión
