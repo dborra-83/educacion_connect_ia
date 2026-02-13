@@ -77,7 +77,7 @@ export async function queryKnowledgeBaseMock(
         'El programa de Ingeniería Informática consta de 160 créditos distribuidos en 10 semestres. Incluye materias de programación, bases de datos, redes y desarrollo de software.',
       relevanceScore: 0.95,
       source: 's3://knowledge-base/programs/ing-informatica-pensum.pdf',
-      documentType: 'program',
+      documentType: 'curriculum',
       keywords: ['ingeniería', 'informática', 'pensum', 'programa', 'créditos'],
     },
     {
@@ -86,7 +86,7 @@ export async function queryKnowledgeBaseMock(
         'Para ingresar a programas de pregrado se requiere: título de bachiller, examen de admisión aprobado, documentos de identidad y certificado médico.',
       relevanceScore: 0.88,
       source: 's3://knowledge-base/admissions/requisitos-pregrado.pdf',
-      documentType: 'procedure',
+      documentType: 'requirements',
       keywords: ['admisión', 'requisitos', 'pregrado', 'ingreso'],
     },
     {
@@ -95,7 +95,7 @@ export async function queryKnowledgeBaseMock(
         'Las inscripciones para el semestre 2024-1 estarán abiertas del 15 de noviembre al 15 de diciembre de 2023. Proceso en línea a través del portal estudiantil.',
       relevanceScore: 0.82,
       source: 's3://knowledge-base/calendar/inscripciones-2024-1.pdf',
-      documentType: 'faq',
+      documentType: 'calendar',
       keywords: ['inscripción', 'fechas', 'calendario', 'semestre'],
     },
     {
@@ -104,8 +104,17 @@ export async function queryKnowledgeBaseMock(
         'Maestría en Administración de Empresas con énfasis en gestión estratégica. Duración: 4 semestres. Modalidad presencial y virtual.',
       relevanceScore: 0.75,
       source: 's3://knowledge-base/programs/maestria-administracion.pdf',
-      documentType: 'program',
-      keywords: ['maestría', 'administración', 'posgrado', 'mba'],
+      documentType: 'program_info',
+      keywords: ['maestría', 'administración', 'posgrado', 'mba', 'programa'],
+    },
+    {
+      title: 'Proceso de Admisión 2024',
+      excerpt:
+        'El proceso de admisión incluye: registro en línea, examen de admisión, entrevista personal y revisión de documentos. Resultados en 15 días hábiles.',
+      relevanceScore: 0.85,
+      source: 's3://knowledge-base/admissions/proceso-admision.pdf',
+      documentType: 'admission',
+      keywords: ['admisión', 'proceso', 'ingreso', 'aplicar'],
     },
     {
       title: 'Proceso de Solicitud de Certificados',

@@ -25,7 +25,7 @@ describe('queryKnowledgeBase', () => {
       });
 
       expect(result.totalResults).toBeGreaterThan(0);
-      expect(result.results[0].documentType).toBe('procedure');
+      expect(result.results[0].documentType).toBe('requirements');
     });
 
     it('debe retornar resultados para consulta sobre fechas', async () => {
@@ -50,13 +50,13 @@ describe('queryKnowledgeBase', () => {
       const result = await queryKnowledgeBaseMock({
         query: 'programa',
         filters: {
-          documentType: ['program'],
+          documentType: ['program_info'],
         },
       });
 
       expect(result.totalResults).toBeGreaterThan(0);
       result.results.forEach((doc) => {
-        expect(doc.documentType).toBe('program');
+        expect(doc.documentType).toBe('program_info');
       });
     });
   });

@@ -78,12 +78,12 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 20: Generación con herramienta correcta**
     - **Valida: Requisitos 6.4**
 
-- [ ] 4. Checkpoint - Verificar herramientas MCP
+- [x] 4. Checkpoint - Verificar herramientas MCP
   - Ejecutar todas las pruebas de herramientas MCP
   - Verificar que todas las herramientas manejen errores correctamente
   - Preguntar al usuario si hay dudas o ajustes necesarios
 
-- [-] 5. Implementar lógica de gestión de perfil y contexto
+- [x] 5. Implementar lógica de gestión de perfil y contexto
   - [x] 5.1 Implementar recuperación de perfil al iniciar conversación
     - Crear función que extrae studentId del contexto de Amazon Connect
     - Invocar getStudentProfile al inicio de cada sesión
@@ -133,7 +133,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Probar caso cuando nombre tiene caracteres especiales
 
 - [ ] 7. Implementar motor de consultas a base de conocimiento
-  - [ ] 7.1 Crear función de procesamiento de consultas académicas
+  - [x] 7.1 Crear función de procesamiento de consultas académicas
     - Implementar detección de tipo de consulta (pensum, requisitos, fechas)
     - Invocar queryKnowledgeBase con parámetros apropiados
     - Formatear resultados con excerpts y fuentes
@@ -392,7 +392,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Implementar evaluación de oportunidades proactivas
     - _Requisitos: Todos (orquestación general)_
   
-  - [-] 16.2 Implementar gestor de estado de conversación
+  - [x] 16.2 Implementar gestor de estado de conversación
     - Crear función que mantiene ConversationContext actualizado
     - Implementar persistencia de contexto entre turnos
     - Implementar limpieza de contexto al finalizar sesión
