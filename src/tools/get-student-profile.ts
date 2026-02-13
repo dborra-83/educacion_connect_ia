@@ -80,9 +80,7 @@ function mapToStudentProfile(
 /**
  * Recupera el perfil del estudiante desde DynamoDB
  */
-export async function getStudentProfile(
-  input: GetStudentProfileInput,
-): Promise<StudentProfile> {
+export async function getStudentProfile(input: GetStudentProfileInput): Promise<StudentProfile> {
   const { studentId, includeAcademic = true, includeCRM = true } = input;
 
   // Validar entrada
@@ -124,10 +122,7 @@ export async function getStudentProfile(
     return studentProfile;
   } catch (error) {
     // Si ya es un error conocido, re-lanzarlo
-    if (
-      error instanceof StudentNotFoundError ||
-      error instanceof InvalidStudentIdError
-    ) {
+    if (error instanceof StudentNotFoundError || error instanceof InvalidStudentIdError) {
       throw error;
     }
 
@@ -151,7 +146,7 @@ export async function getStudentProfileMock(
 
   // Datos mock
   const mockProfiles: Record<string, StudentProfile> = {
-    'STU001': {
+    STU001: {
       studentId: 'STU001',
       firstName: 'Carlos',
       lastName: 'Rodríguez',
@@ -169,7 +164,7 @@ export async function getStudentProfileMock(
         tags: ['prospecto', 'interesado-maestria'],
       },
     },
-    'STU002': {
+    STU002: {
       studentId: 'STU002',
       firstName: 'María',
       lastName: 'González',

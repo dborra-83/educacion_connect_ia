@@ -3,7 +3,11 @@
  * Maneja el flujo completo: verificación de identidad, deudas, generación y entrega
  */
 
-import { StudentProfile, GenerateCertificateInput, GenerateCertificateResult } from '../types/mcp-tools';
+import {
+  StudentProfile,
+  GenerateCertificateInput,
+  GenerateCertificateResult,
+} from '../types/mcp-tools';
 import { getStudentProfile, getStudentProfileMock } from '../tools/get-student-profile';
 import { checkAcademicRecord, checkAcademicRecordMock } from '../tools/check-academic-record';
 import { generateCertificate, generateCertificateMock } from '../tools/generate-certificate';
@@ -62,9 +66,7 @@ async function checkStudentDebts(
 
     // Verificar si hay deudas en el estado financiero
     // En el mock, esto viene en alerts o podríamos tener un campo específico
-    const hasDebts = record.alerts?.some((alert) =>
-      alert.message.toLowerCase().includes('deuda'),
-    );
+    const hasDebts = record.alerts?.some((alert) => alert.message.toLowerCase().includes('deuda'));
 
     if (hasDebts) {
       // Intentar extraer monto de la deuda

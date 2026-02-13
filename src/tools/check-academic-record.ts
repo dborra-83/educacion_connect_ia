@@ -75,10 +75,7 @@ export async function checkAcademicRecord(
 
     return result;
   } catch (error) {
-    if (
-      error instanceof StudentNotFoundError ||
-      error instanceof InvalidStudentIdError
-    ) {
+    if (error instanceof StudentNotFoundError || error instanceof InvalidStudentIdError) {
       throw error;
     }
 

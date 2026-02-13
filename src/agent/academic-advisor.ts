@@ -221,8 +221,7 @@ export function analyzeImpediments(record: AcademicRecord): ImpedimentAnalysis {
   }
 
   // Verificar materias reprobadas críticas
-  const criticalFailures =
-    record.courses?.filter((c) => c.status === 'failed').length || 0;
+  const criticalFailures = record.courses?.filter((c) => c.status === 'failed').length || 0;
   if (criticalFailures > 2) {
     analysis.impediments.push({
       type: 'academic',

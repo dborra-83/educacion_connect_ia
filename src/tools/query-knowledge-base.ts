@@ -111,7 +111,7 @@ export async function queryKnowledgeBaseMock(
       title: 'Proceso de Solicitud de Certificados',
       excerpt:
         'Los certificados académicos pueden solicitarse en línea. Tiempo de entrega: 3-5 días hábiles. Requisito: estar al día con pagos.',
-      relevanceScore: 0.70,
+      relevanceScore: 0.7,
       source: 's3://knowledge-base/procedures/certificados.pdf',
       documentType: 'procedure',
       keywords: ['certificado', 'solicitud', 'trámite', 'documento'],

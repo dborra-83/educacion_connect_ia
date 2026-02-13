@@ -39,7 +39,9 @@ function validateStudentId(studentId: string): void {
  * Verifica si el estudiante tiene deudas pendientes
  * En producción, esto consultaría el sistema financiero
  */
-async function checkStudentDebts(studentId: string): Promise<{ hasDebts: boolean; amount?: number }> {
+async function checkStudentDebts(
+  studentId: string,
+): Promise<{ hasDebts: boolean; amount?: number }> {
   // Mock de verificación de deudas
   const studentsWithDebts: Record<string, number> = {
     STU003: 500,

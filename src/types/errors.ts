@@ -25,23 +25,13 @@ export class MCPError extends Error {
 
 export class StudentNotFoundError extends MCPError {
   constructor(studentId: string) {
-    super(
-      `Estudiante con ID ${studentId} no encontrado`,
-      'STUDENT_NOT_FOUND',
-      404,
-      { studentId },
-    );
+    super(`Estudiante con ID ${studentId} no encontrado`, 'STUDENT_NOT_FOUND', 404, { studentId });
   }
 }
 
 export class InvalidStudentIdError extends MCPError {
   constructor(studentId: string) {
-    super(
-      `ID de estudiante inválido: ${studentId}`,
-      'INVALID_STUDENT_ID',
-      400,
-      { studentId },
-    );
+    super(`ID de estudiante inválido: ${studentId}`, 'INVALID_STUDENT_ID', 400, { studentId });
   }
 }
 
@@ -57,12 +47,7 @@ export class EmptyQueryError extends MCPError {
 
 export class NoResultsFoundError extends MCPError {
   constructor(query: string) {
-    super(
-      `No se encontraron resultados para: ${query}`,
-      'NO_RESULTS_FOUND',
-      404,
-      { query },
-    );
+    super(`No se encontraron resultados para: ${query}`, 'NO_RESULTS_FOUND', 404, { query });
   }
 }
 
@@ -83,12 +68,9 @@ export class StudentHasDebtsError extends MCPError {
 
 export class InvalidCertificateTypeError extends MCPError {
   constructor(certificateType: string) {
-    super(
-      `Tipo de certificado inválido: ${certificateType}`,
-      'INVALID_CERTIFICATE_TYPE',
-      400,
-      { certificateType },
-    );
+    super(`Tipo de certificado inválido: ${certificateType}`, 'INVALID_CERTIFICATE_TYPE', 400, {
+      certificateType,
+    });
   }
 }
 
@@ -100,12 +82,10 @@ export class GenerationFailedError extends MCPError {
 
 export class DeliveryFailedError extends MCPError {
   constructor(reason: string, destination: string) {
-    super(
-      `Error al entregar el certificado a ${destination}: ${reason}`,
-      'DELIVERY_FAILED',
-      500,
-      { reason, destination },
-    );
+    super(`Error al entregar el certificado a ${destination}: ${reason}`, 'DELIVERY_FAILED', 500, {
+      reason,
+      destination,
+    });
   }
 }
 
@@ -126,12 +106,10 @@ export class ServiceUnavailableError extends MCPError {
 
 export class TimeoutError extends MCPError {
   constructor(operation: string, timeoutMs: number) {
-    super(
-      `La operación ${operation} excedió el tiempo límite de ${timeoutMs}ms`,
-      'TIMEOUT',
-      504,
-      { operation, timeoutMs },
-    );
+    super(`La operación ${operation} excedió el tiempo límite de ${timeoutMs}ms`, 'TIMEOUT', 504, {
+      operation,
+      timeoutMs,
+    });
   }
 }
 

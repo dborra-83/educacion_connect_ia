@@ -195,7 +195,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 15: Análisis preventivo de impedimentos**
     - **Valida: Requisitos 5.3**
 
-- [-] 10. Implementar flujo de generación de certificados
+- [x] 10. Implementar flujo de generación de certificados
   - [x] 10.1 Crear orquestador de generación de certificados
     - Implementar verificación de identidad usando perfil unificado
     - Implementar consulta de deudas pendientes
@@ -381,8 +381,8 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - Probar intento de acceso a datos de otro estudiante
     - Probar inyección en queries
 
-- [ ] 16. Implementar motor de razonamiento del agente
-  - [ ] 16.1 Crear ciclo principal de razonamiento
+- [-] 16. Implementar motor de razonamiento del agente
+  - [x] 16.1 Crear ciclo principal de razonamiento
     - Implementar identificación de intención desde mensaje del usuario
     - Implementar recuperación de contexto necesario
     - Implementar análisis de situación del estudiante
