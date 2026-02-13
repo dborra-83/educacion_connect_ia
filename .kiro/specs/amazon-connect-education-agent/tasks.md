@@ -103,7 +103,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 6: Caché de perfil en sesión**
     - **Valida: Requisitos 2.3**
   
-  - [-] 5.5 Implementar validación de datos contradictorios
+  - [x] 5.5 Implementar validación de datos contradictorios
     - Crear función que compara datos del usuario con perfil unificado
     - Implementar lógica de solicitud de confirmación cuando hay contradicción
     - _Requisitos: 2.4_
@@ -112,8 +112,8 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 7: Confirmación ante datos contradictorios**
     - **Valida: Requisitos 2.4**
 
-- [-] 6. Implementar generación de saludos personalizados
-  - [-] 6.1 Crear función de formateo de saludo
+- [x] 6. Implementar generación de saludos personalizados
+  - [x] 6.1 Crear función de formateo de saludo
     - Implementar lógica para construir saludo con nombre completo
     - Implementar lógica para incluir programa académico si está disponible
     - Manejar caso cuando perfil no está disponible (solicitar identificación)
@@ -161,14 +161,14 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
   - Verificar flujo completo: inicio → saludo → consulta → respuesta
   - Preguntar al usuario si hay dudas o ajustes necesarios
 
-- [ ] 9. Implementar lógica de asistencia académica proactiva
-  - [ ] 9.1 Crear analizador de historial académico
+- [x] 9. Implementar lógica de asistencia académica proactiva
+  - [x] 9.1 Crear analizador de historial académico
     - Implementar función que detecta materias reprobadas
     - Implementar función que detecta materias en riesgo (alertas)
     - Implementar función que detecta bajo GPA
     - _Requisitos: 5.1, 5.2_
   
-  - [ ] 9.2 Implementar generador de recomendaciones proactivas
+  - [x] 9.2 Implementar generador de recomendaciones proactivas
     - Crear función que genera oferta de tutoría ante materias reprobadas
     - Crear función que sugiere recursos ante materias en riesgo
     - Crear función que ofrece cursos de verano
@@ -186,7 +186,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 16: Oferta de cursos de verano**
     - **Valida: Requisitos 5.4**
   
-  - [ ] 9.6 Implementar análisis preventivo de impedimentos
+  - [x] 9.6 Implementar análisis preventivo de impedimentos
     - Crear función que consulta historial y estado financiero antes de trámites
     - Implementar detección de bloqueos (deudas, bajo rendimiento, etc.)
     - _Requisitos: 5.3_
@@ -195,8 +195,8 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 15: Análisis preventivo de impedimentos**
     - **Valida: Requisitos 5.3**
 
-- [ ] 10. Implementar flujo de generación de certificados
-  - [ ] 10.1 Crear orquestador de generación de certificados
+- [-] 10. Implementar flujo de generación de certificados
+  - [x] 10.1 Crear orquestador de generación de certificados
     - Implementar verificación de identidad usando perfil unificado
     - Implementar consulta de deudas pendientes
     - Implementar lógica de bloqueo si hay deudas
