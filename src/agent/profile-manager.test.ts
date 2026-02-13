@@ -1,0 +1,251 @@
+/**
+ * Tests para profile-manager
+ */
+
+import { describe, it, expect } from 'vitest';
+import {
+  extractStudentIdFromContext,
+  retrieveStudentProfile,
+  initializeConversationContext,
+  validateUserDataAgainstProfile,
+  generateConfirmationMessage,
+} from './profile-manager';
+import { ConversationContext } from '../types/models';
+import { StudentProfile } from '../types/mcp-tools';
+
+describe('ProfileManager', () => {
+  describe('extractStudentIdFromContext', () => {
+    it('debe extraer studentId de Attributes', () => {
+      const connectEvent = {
+        Details: {
+          ContactData: {
+            Attributes: {
+              studentId: 'STU001',
+            },
+          },
+        },
+      };
+
+      const result = extractStudentIdFromContext(connectEvent);
+      expect(result).toBe('STU001');
+    });
+
+    it('debe extraer studentId de Parameters', () => {
+      const connectEvent = {
+        Details: {
+          Parameters: {
+            studentId: 'STU002',
+          },
+        },
+      };
+
+      const result = extractStudentIdFromContext(connectEvent);
+      expect(result).toBe('STU002');
+    });
+
+    it('debe retornar undefined si no hay studentId', () => {
+      const connectEvent = {
+        Details: {},
+      };
+
+      const result = extractStudentIdFromContext(connectEvent);
+      expect(result).toBeUndefined();
+    });
+  });
+
+  describe('retrieveStudentProfile', () => {
+    it('debe recuperar perfil cuando hay studentId', async () => {
+      const context: ConversationContext = {
+        sessionId: 'session-123',
+        studentId: 'STU001',
+        conversationHistory: [],
+        entities: new Map(),
+      };
+
+      const profile = await retrieveStudentProfile(context, true);
+
+      expect(profile).toBeDefined();
+      expect(profile?.studentId).toBe('STU001');
+      expect(context.studentProfile).toBeDefined();
+    });
+
+    it('debe usar caché si el perfil ya está en contexto', async () => {
+      const cachedProfile: StudentProfile = {
+        studentId: 'STU001',
+        firstName: 'Carlos',
+        lastName: 'Rodríguez',
+        email: 'carlos@test.com',
+        phone: '+57 300 123 4567',
+      };
+
+      const context: ConversationContext = {
+        sessionId: 'session-123',
+        studentId: 'STU001',
+        studentProfile: cachedProfile,
+        conversationHistory: [],
+        entities: new Map(),
+      };
+
+      const profile = await retrieveStudentProfile(context, true);
+
+      expect(profile).toBe(cachedProfile);
+    });
+
+    it('debe retornar undefined si no hay studentId', async () => {
+      const context: ConversationContext = {
+        sessionId: 'session-123',
+        conversationHistory: [],
+        entities: new Map(),
+      };
+
+      const profile = await retrieveStudentProfile(context, true);
+
+      expect(profile).toBeUndefined();
+    });
+  });
+
+  describe('initializeConversationContext', () => {
+    it('debe inicializar contexto con perfil cuando hay studentId', async () => {
+      const connectEvent = {
+        Details: {
+          ContactData: {
+            Attributes: {
+              studentId: 'STU001',
+            },
+          },
+        },
+      };
+
+      const context = await initializeConversationContext('session-123', connectEvent, true);
+
+      expect(context.sessionId).toBe('session-123');
+      expect(context.studentId).toBe('STU001');
+      expect(context.studentProfile).toBeDefined();
+      expect(context.conversationHistory).toEqual([]);
+    });
+
+    it('debe inicializar contexto sin perfil cuando no hay studentId', async () => {
+      const connectEvent = {
+        Details: {},
+      };
+
+      const context = await initializeConversationContext('session-123', connectEvent, true);
+
+      expect(context.sessionId).toBe('session-123');
+      expect(context.studentId).toBeUndefined();
+      expect(context.studentProfile).toBeUndefined();
+    });
+  });
+
+  describe('validateUserDataAgainstProfile', () => {
+    const mockProfile: StudentProfile = {
+      studentId: 'STU001',
+      firstName: 'Carlos',
+      lastName: 'Rodríguez',
+      email: 'carlos@universidad.edu',
+      phone: '+57 300 123 4567',
+      program: {
+        name: 'Ingeniería Informática',
+        code: 'ING-INF',
+        enrollmentDate: '2022-01-15',
+      },
+    };
+
+    it('debe detectar contradicción en email', () => {
+      const userData = {
+        email: 'otro@email.com',
+      };
+
+      const result = validateUserDataAgainstProfile(userData, mockProfile);
+
+      expect(result.hasContradiction).toBe(true);
+      expect(result.contradictions.length).toBeGreaterThan(0);
+      expect(result.contradictions[0]).toContain('Email');
+    });
+
+    it('debe detectar contradicción en teléfono', () => {
+      const userData = {
+        phone: '+57 310 999 8888',
+      };
+
+      const result = validateUserDataAgainstProfile(userData, mockProfile);
+
+      expect(result.hasContradiction).toBe(true);
+      expect(result.contradictions[0]).toContain('Teléfono');
+    });
+
+    it('debe detectar contradicción en nombre', () => {
+      const userData = {
+        firstName: 'Juan',
+      };
+
+      const result = validateUserDataAgainstProfile(userData, mockProfile);
+
+      expect(result.hasContradiction).toBe(true);
+      expect(result.contradictions[0]).toContain('Nombre');
+    });
+
+    it('debe detectar contradicción en programa', () => {
+      const userData = {
+        program: 'ADM-EMP',
+      };
+
+      const result = validateUserDataAgainstProfile(userData, mockProfile);
+
+      expect(result.hasContradiction).toBe(true);
+      expect(result.contradictions[0]).toContain('Programa');
+    });
+
+    it('no debe detectar contradicciones cuando los datos coinciden', () => {
+      const userData = {
+        email: 'carlos@universidad.edu',
+        phone: '+57 300 123 4567',
+        firstName: 'Carlos',
+      };
+
+      const result = validateUserDataAgainstProfile(userData, mockProfile);
+
+      expect(result.hasContradiction).toBe(false);
+      expect(result.contradictions.length).toBe(0);
+    });
+
+    it('debe detectar múltiples contradicciones', () => {
+      const userData = {
+        email: 'otro@email.com',
+        phone: '+57 310 999 8888',
+        firstName: 'Juan',
+      };
+
+      const result = validateUserDataAgainstProfile(userData, mockProfile);
+
+      expect(result.hasContradiction).toBe(true);
+      expect(result.contradictions.length).toBe(3);
+    });
+  });
+
+  describe('generateConfirmationMessage', () => {
+    it('debe generar mensaje con lista de contradicciones', () => {
+      const contradictions = [
+        'Email proporcionado no coincide',
+        'Teléfono proporcionado no coincide',
+      ];
+
+      const message = generateConfirmationMessage(contradictions);
+
+      expect(message).toContain('diferencias');
+      expect(message).toContain('1. Email');
+      expect(message).toContain('2. Teléfono');
+      expect(message).toContain('confirmar');
+    });
+
+    it('debe numerar las contradicciones', () => {
+      const contradictions = ['Contradicción 1', 'Contradicción 2', 'Contradicción 3'];
+
+      const message = generateConfirmationMessage(contradictions);
+
+      expect(message).toContain('1.');
+      expect(message).toContain('2.');
+      expect(message).toContain('3.');
+    });
+  });
+});

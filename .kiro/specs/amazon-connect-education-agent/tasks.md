@@ -83,8 +83,8 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
   - Verificar que todas las herramientas manejen errores correctamente
   - Preguntar al usuario si hay dudas o ajustes necesarios
 
-- [ ] 5. Implementar lógica de gestión de perfil y contexto
-  - [ ] 5.1 Implementar recuperación de perfil al iniciar conversación
+- [-] 5. Implementar lógica de gestión de perfil y contexto
+  - [x] 5.1 Implementar recuperación de perfil al iniciar conversación
     - Crear función que extrae studentId del contexto de Amazon Connect
     - Invocar getStudentProfile al inicio de cada sesión
     - Almacenar perfil en ConversationContext
@@ -94,7 +94,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 1: Recuperación de perfil al iniciar conversación**
     - **Valida: Requisitos 1.1**
   
-  - [ ] 5.3 Implementar caché de perfil en sesión
+  - [x] 5.3 Implementar caché de perfil en sesión
     - Crear mecanismo de caché en memoria para perfil durante sesión activa
     - Implementar lógica para evitar llamadas redundantes a getStudentProfile
     - _Requisitos: 2.3_
@@ -103,7 +103,7 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 6: Caché de perfil en sesión**
     - **Valida: Requisitos 2.3**
   
-  - [ ] 5.5 Implementar validación de datos contradictorios
+  - [-] 5.5 Implementar validación de datos contradictorios
     - Crear función que compara datos del usuario con perfil unificado
     - Implementar lógica de solicitud de confirmación cuando hay contradicción
     - _Requisitos: 2.4_
@@ -112,8 +112,8 @@ Este plan desglosa la implementación del agente de IA MCP para Amazon Connect e
     - **Propiedad 7: Confirmación ante datos contradictorios**
     - **Valida: Requisitos 2.4**
 
-- [ ] 6. Implementar generación de saludos personalizados
-  - [ ] 6.1 Crear función de formateo de saludo
+- [-] 6. Implementar generación de saludos personalizados
+  - [-] 6.1 Crear función de formateo de saludo
     - Implementar lógica para construir saludo con nombre completo
     - Implementar lógica para incluir programa académico si está disponible
     - Manejar caso cuando perfil no está disponible (solicitar identificación)
