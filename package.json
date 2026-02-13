@@ -1,0 +1,45 @@
+{
+  "name": "amazon-connect-education-agent",
+  "version": "1.0.0",
+  "description": "Agente de IA MCP para Amazon Connect adaptado a instituciones de educación superior",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\""
+  },
+  "keywords": [
+    "amazon-connect",
+    "mcp",
+    "education",
+    "ai-agent",
+    "chatbot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.450.0",
+    "@aws-sdk/client-kendra": "^3.450.0",
+    "@aws-sdk/client-lambda": "^3.450.0",
+    "@aws-sdk/client-s3": "^3.450.0",
+    "@aws-sdk/lib-dynamodb": "^3.450.0",
+    "fast-check": "^3.15.0"
+  }
+}
