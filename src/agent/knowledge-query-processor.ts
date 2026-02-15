@@ -97,9 +97,7 @@ export class KnowledgeQueryProcessor {
 
     // Detectar consulta sobre programa específico
     if (
-      queryLower.match(
-        /\b(programa|carrera|licenciatura|maestría|doctorado|especialización)\b/,
-      )
+      queryLower.match(/\b(programa|carrera|licenciatura|maestría|doctorado|especialización)\b/)
     ) {
       return QueryType.PROGRAMA;
     }

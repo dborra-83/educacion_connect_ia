@@ -318,11 +318,9 @@ describe('ProcedureExecutor', () => {
         },
       });
 
-      const result = await ProcedureExecutor.execute(
-        ProcedureType.CERTIFICATE_REQUEST,
-        'S001',
-        { certificateType: 'enrollment' },
-      );
+      const result = await ProcedureExecutor.execute(ProcedureType.CERTIFICATE_REQUEST, 'S001', {
+        certificateType: 'enrollment',
+      });
 
       expect(result.success).toBe(true);
       expect(result.steps).toHaveLength(3);
@@ -350,11 +348,9 @@ describe('ProcedureExecutor', () => {
         ],
       });
 
-      const result = await ProcedureExecutor.execute(
-        ProcedureType.CERTIFICATE_REQUEST,
-        'S001',
-        { certificateType: 'enrollment' },
-      );
+      const result = await ProcedureExecutor.execute(ProcedureType.CERTIFICATE_REQUEST, 'S001', {
+        certificateType: 'enrollment',
+      });
 
       expect(result.success).toBe(false);
       expect(result.steps).toHaveLength(2);
@@ -377,11 +373,9 @@ describe('ProcedureExecutor', () => {
         generatedAt: '2024-01-15T10:00:00Z',
       });
 
-      const result = await ProcedureExecutor.execute(
-        ProcedureType.CERTIFICATE_REQUEST,
-        'S001',
-        { certificateType: 'enrollment' },
-      );
+      const result = await ProcedureExecutor.execute(ProcedureType.CERTIFICATE_REQUEST, 'S001', {
+        certificateType: 'enrollment',
+      });
 
       // Verificar que cada paso tiene un nombre descriptivo
       expect(result.steps[0].name).toBeTruthy();
@@ -411,11 +405,7 @@ describe('ProcedureExecutor', () => {
 
   describe('execute - COURSE_REGISTRATION', () => {
     it('debe ejecutar registro de materia con todos los pasos', async () => {
-      const result = await ProcedureExecutor.execute(
-        ProcedureType.COURSE_REGISTRATION,
-        'S001',
-        {},
-      );
+      const result = await ProcedureExecutor.execute(ProcedureType.COURSE_REGISTRATION, 'S001', {});
 
       expect(result.success).toBe(true);
       expect(result.steps).toHaveLength(3);
@@ -484,11 +474,9 @@ describe('ProcedureExecutor', () => {
         generatedAt: '2024-01-15T10:00:00Z',
       });
 
-      const result = await ProcedureExecutor.execute(
-        ProcedureType.CERTIFICATE_REQUEST,
-        'S001',
-        { certificateType: 'enrollment' },
-      );
+      const result = await ProcedureExecutor.execute(ProcedureType.CERTIFICATE_REQUEST, 'S001', {
+        certificateType: 'enrollment',
+      });
 
       // Verificar que los pasos están en orden
       expect(result.steps[0].stepNumber).toBe(1);

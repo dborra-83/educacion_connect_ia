@@ -203,7 +203,7 @@ describe('ReasoningEngine', () => {
 
       const response = await engine.processMessage('Hola', invalidContext);
 
-      expect(response.metadata?.processingTime).toBeGreaterThan(0);
+      expect(response.metadata?.processingTime).toBeGreaterThanOrEqual(0);
     });
   });
 

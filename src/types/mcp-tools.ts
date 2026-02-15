@@ -23,8 +23,14 @@ export interface StudentProfile {
     name: string;
     code: string;
     enrollmentDate: string;
+    programId?: string;
+    level?: string;
+    startDate?: string;
   };
   academicStatus?: 'active' | 'inactive' | 'graduated';
+  enrollmentStatus?: string;
+  academicLevel?: string;
+  lastUpdated?: string;
   crmData?: {
     lastContact: string;
     preferredChannel: string;
@@ -52,6 +58,10 @@ export interface KnowledgeBaseResult {
     relevanceScore: number;
     source: string;
     documentType: string;
+    metadata?: {
+      additionalInfo?: string;
+      [key: string]: any;
+    };
   }>;
   totalResults: number;
 }

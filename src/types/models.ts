@@ -206,6 +206,11 @@ export interface ConversationContext {
   conversationHistory: Message[];
   currentIntent?: string;
   entities: Map<string, any>;
+  metadata?: {
+    createdAt?: string;
+    lastActivity?: string;
+    [key: string]: any;
+  };
 }
 
 export interface AgentResponse {
@@ -213,8 +218,11 @@ export interface AgentResponse {
   actions?: Action[];
   requiresHumanEscalation: boolean;
   metadata?: {
-    toolsUsed: string[];
-    processingTime: number;
+    toolsUsed?: string[];
+    processingTime?: number;
+    intent?: string;
+    transferId?: string;
+    [key: string]: any;
   };
 }
 

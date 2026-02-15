@@ -321,7 +321,7 @@ describe('AcademicAdvisor', () => {
 
       // Debe detectar impedimento por múltiples materias reprobadas (más de 2)
       expect(analysis.impediments.length).toBeGreaterThan(0);
-      
+
       const academicImpediment = analysis.impediments.find((i) => i.type === 'academic');
       expect(academicImpediment).toBeDefined();
       expect(academicImpediment?.message).toContain('3 materias');

@@ -144,6 +144,7 @@ export class ConversationManager {
       sessionId,
       studentId,
       conversationHistory: [],
+      entities: new Map(),
       metadata: {
         createdAt: new Date().toISOString(),
         lastActivity: new Date().toISOString(),

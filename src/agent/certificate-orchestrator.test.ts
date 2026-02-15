@@ -46,7 +46,7 @@ describe('CertificateOrchestrator', () => {
       // STU003 y STU004 tienen deudas en el mock de generateCertificate
       // pero necesitamos que existan en getStudentProfile también
       // Vamos a usar STU001 pero simular que tiene deudas modificando el test
-      
+
       const result = await orchestrateCertificateGeneration(
         {
           studentId: 'STU001',

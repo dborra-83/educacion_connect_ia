@@ -1,0 +1,208 @@
+{
+  "students": [
+    {
+      "studentId": "STU001",
+      "firstName": "Carlos",
+      "lastName": "Rodríguez",
+      "email": "carlos.rodriguez@universidad.edu",
+      "phone": "+1234567890",
+      "program": "Ingeniería de Sistemas",
+      "enrollmentDate": "2021-08-15",
+      "expectedGraduationDate": "2025-06-30",
+      "academicStatus": "active",
+      "currentSemester": 7,
+      "gpa": 3.8,
+      "totalCredits": 120,
+      "completedCredits": 98,
+      "financialStatus": {
+        "hasDebts": false,
+        "totalDebt": 0,
+        "lastPaymentDate": "2024-01-15"
+      },
+      "contactPreferences": {
+        "preferredLanguage": "es",
+        "preferredChannel": "email"
+      }
+    },
+    {
+      "studentId": "STU002",
+      "firstName": "María",
+      "lastName": "González",
+      "email": "maria.gonzalez@universidad.edu",
+      "phone": "+1234567891",
+      "program": "Administración de Empresas",
+      "enrollmentDate": "2020-08-15",
+      "expectedGraduationDate": "2024-12-31",
+      "academicStatus": "active",
+      "currentSemester": 9,
+      "gpa": 3.5,
+      "totalCredits": 140,
+      "completedCredits": 125,
+      "financialStatus": {
+        "hasDebts": true,
+        "totalDebt": 500,
+        "lastPaymentDate": "2023-11-20"
+      },
+      "contactPreferences": {
+        "preferredLanguage": "es",
+        "preferredChannel": "sms"
+      }
+    },
+    {
+      "studentId": "STU003",
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@universidad.edu",
+      "phone": "+1234567892",
+      "program": "Derecho",
+      "enrollmentDate": "2022-01-10",
+      "expectedGraduationDate": "2026-12-31",
+      "academicStatus": "at_risk",
+      "currentSemester": 5,
+      "gpa": 2.3,
+      "totalCredits": 120,
+      "completedCredits": 55,
+      "financialStatus": {
+        "hasDebts": false,
+        "totalDebt": 0,
+        "lastPaymentDate": "2024-01-10"
+      },
+      "contactPreferences": {
+        "preferredLanguage": "es",
+        "preferredChannel": "email"
+      }
+    }
+  ],
+  "academicRecords": [
+    {
+      "studentId": "STU001",
+      "semester": "2024-1",
+      "courses": [
+        {
+          "courseId": "CS401",
+          "courseName": "Arquitectura de Software",
+          "credits": 4,
+          "grade": 4.2,
+          "status": "completed"
+        },
+        {
+          "courseId": "CS402",
+          "courseName": "Bases de Datos Avanzadas",
+          "credits": 4,
+          "grade": 3.8,
+          "status": "completed"
+        },
+        {
+          "courseId": "CS403",
+          "courseName": "Inteligencia Artificial",
+          "credits": 4,
+          "grade": 4.0,
+          "status": "completed"
+        }
+      ],
+      "alerts": []
+    },
+    {
+      "studentId": "STU002",
+      "semester": "2024-1",
+      "courses": [
+        {
+          "courseId": "BA401",
+          "courseName": "Finanzas Corporativas",
+          "credits": 3,
+          "grade": 3.5,
+          "status": "completed"
+        },
+        {
+          "courseId": "BA402",
+          "courseName": "Marketing Estratégico",
+          "credits": 3,
+          "grade": 3.8,
+          "status": "completed"
+        }
+      ],
+      "alerts": [
+        {
+          "type": "financial",
+          "message": "Deuda pendiente de $500",
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "studentId": "STU003",
+      "semester": "2024-1",
+      "courses": [
+        {
+          "courseId": "LAW301",
+          "courseName": "Derecho Civil",
+          "credits": 4,
+          "grade": 2.0,
+          "status": "failed"
+        },
+        {
+          "courseId": "LAW302",
+          "courseName": "Derecho Penal",
+          "credits": 4,
+          "grade": 2.5,
+          "status": "at_risk"
+        }
+      ],
+      "alerts": [
+        {
+          "type": "academic",
+          "message": "Materia reprobada: Derecho Civil",
+          "severity": "high"
+        },
+        {
+          "type": "academic",
+          "message": "Bajo rendimiento en Derecho Penal",
+          "severity": "medium"
+        },
+        {
+          "type": "gpa",
+          "message": "GPA por debajo del mínimo requerido (2.5)",
+          "severity": "high"
+        }
+      ]
+    }
+  ],
+  "knowledgeBaseDocuments": [
+    {
+      "documentId": "DOC001",
+      "title": "Pensum Ingeniería de Sistemas 2024",
+      "type": "curriculum",
+      "program": "Ingeniería de Sistemas",
+      "content": "El programa de Ingeniería de Sistemas consta de 140 créditos distribuidos en 10 semestres...",
+      "tags": ["pensum", "ingenieria", "sistemas"],
+      "lastUpdated": "2024-01-15"
+    },
+    {
+      "documentId": "DOC002",
+      "title": "Requisitos para Certificados Académicos",
+      "type": "procedure",
+      "program": "general",
+      "content": "Para solicitar certificados académicos, el estudiante debe: 1) Estar al día con pagos, 2) No tener sanciones disciplinarias...",
+      "tags": ["certificados", "tramites", "requisitos"],
+      "lastUpdated": "2024-01-10"
+    },
+    {
+      "documentId": "DOC003",
+      "title": "Calendario Académico 2024",
+      "type": "schedule",
+      "program": "general",
+      "content": "Semestre 1: Enero 15 - Mayo 30. Semestre 2: Agosto 1 - Diciembre 15. Período de inscripciones...",
+      "tags": ["calendario", "fechas", "semestre"],
+      "lastUpdated": "2023-12-01"
+    },
+    {
+      "documentId": "DOC004",
+      "title": "Servicios de Tutoría Académica",
+      "type": "service",
+      "program": "general",
+      "content": "La universidad ofrece servicios de tutoría gratuita en matemáticas, física, química y programación. Horarios: Lunes a Viernes 2pm-6pm...",
+      "tags": ["tutoria", "apoyo", "servicios"],
+      "lastUpdated": "2024-01-05"
+    }
+  ]
+}

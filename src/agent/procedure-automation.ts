@@ -444,7 +444,8 @@ export class ProcedureExecutor {
       }
 
       // Verificar si todos los pasos se completaron
-      result.success = result.steps.length > 0 && result.steps.every((step) => step.status === 'completed');
+      result.success =
+        result.steps.length > 0 && result.steps.every((step) => step.status === 'completed');
 
       logger.info(
         `Trámite ${procedureType} ${result.success ? 'completado' : 'falló'} para estudiante ${studentId}`,
