@@ -1,0 +1,13 @@
+{
+  "studentId": {"S": "STU003"},
+  "firstName": {"S": "Juan"},
+  "lastName": {"S": "Perez"},
+  "email": {"S": "juan.perez@universidad.edu"},
+  "phone": {"S": "+1234567892"},
+  "program": {"S": "Derecho"},
+  "enrollmentDate": {"S": "2022-01-10"},
+  "academicStatus": {"S": "at_risk"},
+  "gpa": {"N": "2.3"},
+  "currentSemester": {"N": "5"},
+  "completedCredits": {"N": "55"}
+}

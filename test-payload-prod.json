@@ -1,0 +1,17 @@
+{
+  "Details": {
+    "ContactData": {
+      "Attributes": {
+        "studentId": "STU001"
+      },
+      "ContactId": "test-prod-001",
+      "InitialContactId": "test-prod-001",
+      "Channel": "VOICE",
+      "InstanceARN": "arn:aws:connect:us-east-1:520754296204:instance/983955e0-57a9-4633-aad0-f87f18072f04"
+    },
+    "Parameters": {
+      "userMessage": "Hola, necesito ayuda con mi certificado de notas"
+    }
+  },
+  "Name": "ContactFlowEvent"
+}

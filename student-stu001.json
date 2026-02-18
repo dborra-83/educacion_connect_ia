@@ -1,0 +1,13 @@
+{
+  "studentId": {"S": "STU001"},
+  "firstName": {"S": "Carlos"},
+  "lastName": {"S": "Rodriguez"},
+  "email": {"S": "carlos.rodriguez@universidad.edu"},
+  "phone": {"S": "+1234567890"},
+  "program": {"S": "Ingenieria de Sistemas"},
+  "enrollmentDate": {"S": "2021-08-15"},
+  "academicStatus": {"S": "active"},
+  "gpa": {"N": "3.8"},
+  "currentSemester": {"N": "7"},
+  "completedCredits": {"N": "98"}
+}

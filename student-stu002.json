@@ -1,0 +1,14 @@
+{
+  "studentId": {"S": "STU002"},
+  "firstName": {"S": "Maria"},
+  "lastName": {"S": "Gonzalez"},
+  "email": {"S": "maria.gonzalez@universidad.edu"},
+  "phone": {"S": "+1234567891"},
+  "program": {"S": "Administracion de Empresas"},
+  "enrollmentDate": {"S": "2020-08-15"},
+  "academicStatus": {"S": "active"},
+  "gpa": {"N": "3.5"},
+  "currentSemester": {"N": "9"},
+  "completedCredits": {"N": "125"},
+  "hasDebts": {"BOOL": true}
+}
